@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Local Home Assistant data
+/data/
+options.json

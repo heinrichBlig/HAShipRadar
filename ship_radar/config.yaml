@@ -1,0 +1,29 @@
+name: Ship Radar
+version: "0.1.0"
+slug: ship_radar
+description: Live ships around your home from AISStream.io, shown on a Home Assistant dashboard card.
+url: https://github.com/heinrichBlig/HAShipRadar
+arch:
+  - amd64
+  - aarch64
+  - armv7
+init: false
+homeassistant_api: true
+startup: application
+boot: auto
+ports:
+  8099/tcp: null
+ports_description:
+  8099/tcp: Optional debug JSON at /ships.json
+options:
+  api_key: ""
+  radius_nm: 30
+  expire_minutes: 20
+  entity_id: sensor.ship_radar
+schema:
+  api_key: password
+  latitude: float?
+  longitude: float?
+  radius_nm: int(5,150)
+  expire_minutes: int(2,240)
+  entity_id: match(^sensor\.[a-z0-9_]+$)
