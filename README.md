@@ -4,6 +4,8 @@ Ships near your home on a Home Assistant dashboard. Each vessel is drawn as a si
 at its real bearing and distance from you, sized by length, with a wake when it is moving.
 Inspired by [HABirdDashboard](https://github.com/adamoberley/HABirdDashboard).
 
+![Ship Radar card showing vessels around home](https://raw.githubusercontent.com/heinrichBlig/HAShipRadarCard/main/docs/preview.png)
+
 ```
 AISStream.io  --websocket-->  Ship Radar app  --sensor.ship_radar-->  Ship Radar card
  (free API key)               (keeps a ship table,                     (radar + list)
@@ -23,9 +25,13 @@ free [AISStream](https://aisstream.io) API key into its options, start it, and c
 
 **2. The card**
 
-HACS > Custom repositories > add this repo as type **Dashboard**, download **Ship Radar Card**, reload.
-Without HACS: copy `dist/ship-radar-card.js` to `/config/www/` and add `/local/ship-radar-card.js`
-as a JavaScript module resource.
+The card lives in its own repository, [heinrichBlig/HAShipRadarCard](https://github.com/heinrichBlig/HAShipRadarCard),
+because the Marketplace refuses repositories that hold apps.
+
+Settings > Marketplace > **Add from link** > `https://github.com/heinrichBlig/HAShipRadarCard`
+(type **Dashboard**) > install, then reload your browser. Without the Marketplace, copy
+`dist/ship-radar-card.js` from that repository to `/config/www/` and add
+`/local/ship-radar-card.js` as a JavaScript module resource.
 
 **3. Add it**
 
@@ -34,9 +40,13 @@ type: custom:ship-radar-card
 entity: sensor.ship_radar
 ```
 
-Open `docs/preview.html` in a browser to see the card with mock data before installing anything.
+Open the [card preview](https://github.com/heinrichBlig/HAShipRadarCard/blob/main/docs/preview.html)
+in a browser to see it with mock data before installing anything.
 
 ## Card options
+
+The card's source and full documentation live in
+[heinrichBlig/HAShipRadarCard](https://github.com/heinrichBlig/HAShipRadarCard).
 
 | Option | Default | |
 |---|---|---|
@@ -72,3 +82,5 @@ Open `docs/preview.html` in a browser to see the card with mock data before inst
 ```
 python3 -m unittest discover -s tests   # relay logic
 ```
+
+The card is developed in [heinrichBlig/HAShipRadarCard](https://github.com/heinrichBlig/HAShipRadarCard).
